@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Use - Fortune Twister</title>
+    <meta name="description" content="Terms of use for Fortune Twister, the free online wheel picker for random selection and decision making.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://fortunetwister.com/terms.html">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="Icon/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-dice-d20"></i> <a href="index.html">FortuneTwister</a>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html#how-it-works">How It Works</a></li>
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
+                <li><a href="index.html#use-cases">Use Cases</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section class="content-section">
+            <h1>Terms of Use</h1>
+            <p>Last Updated: April 3, 2025</p>
+            
+            <div class="policy-content">
+                <h2>Introduction</h2>
+                <p>Welcome to Fortune Twister. These terms and conditions outline the rules and regulations for the use of our website. By accessing this website, we assume you accept these terms and conditions in full. Do not continue to use Fortune Twister if you do not accept all of the terms and conditions stated on this page.</p>
+                
+                <h2>License to Use</h2>
+                <p>Fortune Twister grants you a limited, non-exclusive, non-transferable license to access and use our website for personal, non-commercial purposes. This license does not include:</p>
+                <ul>
+                    <li>Republishing material from Fortune Twister</li>
+                    <li>Selling, renting, or sub-licensing material from Fortune Twister</li>
+                    <li>Reproducing, duplicating, or copying material from Fortune Twister</li>
+                    <li>Redistributing content from Fortune Twister</li>
+                </ul>
+                
+                <h2>User Content</h2>
+                <p>Our wheel picker tool allows you to input your own content (such as names, options, etc.). You retain all rights to any content you submit, post, or display on or through Fortune Twister.</p>
+                <p>By submitting content to our website, you grant us a worldwide, non-exclusive, royalty-free license to use, reproduce, and display such content in connection with the service provided by our website.</p>
+                <p>You are responsible for any content you submit and must ensure it does not violate any applicable laws or regulations.</p>
+                
+                <h2>Restrictions</h2>
+                <p>You are specifically restricted from:</p>
+                <ul>
+                    <li>Using our website in any way that causes, or may cause, damage to the website or impairment of the availability or accessibility of the website</li>
+                    <li>Using our website in any way that is unlawful, illegal, fraudulent, or harmful</li>
+                    <li>Using our website to copy, store, host, transmit, send, use, publish, or distribute any material which consists of (or is linked to) any spyware, computer virus, Trojan horse, worm, keystroke logger, rootkit, or other malicious computer software</li>
+                    <li>Conducting any systematic or automated data collection activities on or in relation to our website</li>
+                    <li>Using data collected from our website for any direct marketing activity</li>
+                </ul>
+                
+                <h2>Intellectual Property</h2>
+                <p>Unless otherwise stated, we own the intellectual property rights for all material on Fortune Twister. All intellectual property rights are reserved. You may view and use the pages on our website for your own personal use subject to the restrictions set out in these terms and conditions.</p>
+                
+                <h2>Limitation of Liability</h2>
+                <p>In no event shall Fortune Twister, nor any of its officers, directors, and employees, be liable to you for anything arising out of or in any way connected with your use of this website, whether such liability is under contract, tort, or otherwise.</p>
+                
+                <h2>Indemnification</h2>
+                <p>You hereby indemnify to the fullest extent Fortune Twister from and against any and all liabilities, costs, demands, causes of action, damages, and expenses arising in any way related to your breach of any of the provisions of these terms.</p>
+                
+                <h2>Severability</h2>
+                <p>If any provision of these terms is found to be unenforceable or invalid under any applicable law, such unenforceability or invalidity shall not render these terms unenforceable or invalid as a whole, and such provisions shall be deleted without affecting the remaining provisions herein.</p>
+                
+                <h2>Variation of Terms</h2>
+                <p>Fortune Twister is permitted to revise these terms at any time as it sees fit, and by using this website, you are expected to review such terms on a regular basis to ensure you understand all terms and conditions governing the use of this website.</p>
+                
+                <h2>Entire Agreement</h2>
+                <p>These terms, including any legal notices and disclaimers contained on this website, constitute the entire agreement between Fortune Twister and you in relation to your use of this website, and supersede all prior agreements and understandings with respect to the same.</p>
+                
+                <h2>Governing Law & Jurisdiction</h2>
+                <p>These terms will be governed by and construed in accordance with applicable laws, and any disputes relating to these terms will be subject to the exclusive jurisdiction of the courts in the applicable jurisdiction.</p>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-nav">
+                <a href="index.html">Home</a>
+                <a href="index.html#how-it-works">How It Works</a>
+                <a href="index.html#features">Features</a>
+                <a href="index.html#faq">FAQ</a>
+                <a href="index.html#use-cases">Use Cases</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Use</a>
+            </div>
+            <p>&copy; <span id="currentYear"></span> FortuneTwister</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                const html = document.documentElement;
+                if (html.getAttribute('data-theme') === 'light') {
+                    html.setAttribute('data-theme', 'dark');
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    html.setAttribute('data-theme', 'light');
+                    localStorage.setItem('theme', 'light');
+                }
+            });
+        }
+        
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+    </script>
+</body>
+</html>

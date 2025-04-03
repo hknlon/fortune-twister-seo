@@ -1,0 +1,152 @@
+prompts
+1. **Interactive Wheel**
+   - A central, customisable spinning wheel that allows users to:
+     - Add, edit, or remove options (text, emojis, or uploaded images).
+     - Spin the wheel to select a random option.
+     - Display the result with an animation and optional sound effects.
+     - At the center of the wheel red circle button should be sayin "SPIN" and spins the wheel when clicked.
+2. **Customisation Options**
+   - Users can:
+     - Choose colours for the wheel segments.
+     - Adjust the number of segments (e.g., 2 to 50).
+3. **Advertising Banner**
+   - A banner void under the wheel to display advertisements.
+4. **Presets and Templates**
+   - Pre-built wheels for common scenarios (e.g., Yes/No, Truth or Dare, colours).
+5. **Responsive Design**
+   - Fully functional on desktops, tablets, and mobiles.
+6. **Sound Effects**
+   - Add optional sound effects when spinning and announcing the result.
+7. **Dark Mode**
+   - Toggle between light and dark themes.
+
+The entered options' text should aligned as in the image. There should be a pointer near the wheel to define the winner as in the image.
+
+Put the name of the site at left top. 
+The wheel does not show any colours, each slice of the wheel should be different colour. 
+When launched start with 3 options by defult as red, green and blue
+The wheel is too big and overflowing, it should contained in it's frame
+The Blue triangle should be at the right side of the wheel pointint to the center of the wheel.
+
+
+Darkmode not working
+sound button should pop up a menu when clicked. There should be sound options and a mute option. The settings button should open a menu which shows wheel options as speed, size and background colour of the page.
+The winner should be displayed with a pop up window when the wheel stops spinning. As big as the wheel.In the center of the winner popup there should be the winner name and below a replay icon to spin again.
+
+
+The winner popup should have close icon at the top right corner. When winner popup is shown, play notification sound. A convetti effect animation could be fantastic.
+I have below error in console:
+wheel.js:242 Uncaught (in promise) NotSupportedError: The element has no supported sources.
+(anonymous)	@	wheel.js:242
+t	@	d3.v3.min.js:1
+a	@	d3.v3.min.js:3
+Rn	@	d3.v3.min.js:1
+Tn	@	d3.v3.min.js:1
+requestAnimationFrame		
+Tn	@	d3.v3.min.js:1
+requestAnimationFrame		
+Tn	@	d3.v3.min.js:1
+requestAnimationFrame		
+
+When new option is added, if no color is selected, a random color should be selected. But if color is selected, it should be assigned to the new option.
+When the winner is displayed, if continue button is clicked, the winning option should be removed from the wheel and the wheel should resume spinning. If respoing is clicked,the wiinning option should stay and  the wheel should respin.
+
+remove the color paltette instead when a new option is added, a random color should be assigned to the new option, which is not yet given. And when the color icon on the selection is clicked, it should open the color paltette and the selected color should be assigned.
+
+Once continue clicked, if there is only 1 option left on the wheel, it should close the winner popup. If there is only one option on the wheel it should not spin. 
+
+when continue clicked, remove the option obly from the wheel not from the list.
+
+when spin again clicke, the wheel should have all the options back from the list.
+
+Also make the delete option icons red.
+remove the color palette under the input box.
+If there is only one option on the wheel it should not spin. If spin is clicked, the wheel should get all the options back and spin.
+
+In the choose color popup, make the close button red. Also put the apply button near the palette since it overlaps the apply button when it is clicked.
+The icons menu under the wheel is not in its place. It should be under the wheel and aligned with the wheel.
+The plus button near the enter option is narrow, double its width.
+
+
+In the color popup, the color palette button is too small and apply button is too big. make them equal size sharing the width.
+The menu under the wheel is overlapping the option input box. Make sure it is right below the wheel and not overlapping the Add options section.
+
+there should be at least 2 elements in the list. Check every time a new option is deleted,  and not allow the list to be less than 2.
+
+Add options section box should be rounded edge. The elements inside should have a margin with the box.
+
+In the winner popup, make the close button red and half the size. Continue button should be green.Make continue ad spin again button same sized.
+
+At the botton of the page put current year dynamically and the texting like "© 2025 FortuneTwister. All rights reserved." aligned centered.
+
+GET https://fortunetwister.com/ 403 (Forbidden)
+fortunetwister.com/:25 Error parsing a meta element's content: ';' is not a valid key-value pair separator. Please use ',' instead.
+(index):31 A parser-blocking, cross site (i.e. different eTLD+1) script, https://sedoparking.com/frmpark/fortunetwister.com/IONOSParkingUK/park.js, is invoked via document.write. The network request for this script MAY be blocked by the browser in this or a future page load due to poor network connectivity. If blocked in this page load, it will be confirmed in a subsequent console message. See https://www.chromestatus.com/feature/5718547946799104 for more details.
+(index):31 A parser-blocking, cross site (i.e. different eTLD+1) script, https://sedoparking.com/frmpark/fortunetwister.com/IONOSParkingUK/park.js, is invoked via document.write. The network request for this script MAY be blocked by the browser in this or a future page load due to poor network connectivity. If blocked in this page load, it will be confirmed in a subsequent console message. See https://www.chromestatus.com/feature/5718547946799104 for more details.
+(index):31 
+ GET https://sedoparking.com/frmpark/fortunetwister.com/IONOSParkingUK/park.js net::ERR_BLOCKED_BY_ADBLOCKER
+
+
+there are 2 sounds, spin and result. Notification sound looks same as result, is one of them redundant? check this and remove if redundancy exist. And the text in the footer is not aligned centered.
+
+confetti effect got faster with the latest changes, make it as before
+
+optimize it for SEO, below is the keywords:
+picker wheel
+random picker wheel
+random name picker wheel
+name picker wheel
+random name picker
+wheel spin
+pickerwheel
+spin wheel
+wheel decide
+wheel of names
+spin the wheel
+random name picker
+wheel spinner
+random wheel
+randomizer wheel
+spinner wheel
+spinning wheel
+random picker
+you can add new or remove for best outcome
+
+Top organic search terms, update seo optimization if necessary;
+yes or no
+yes or no wheel
+wheel picker
+picker wheel
+random picker wheel
+random name picker wheel
+name picker wheel
+random name picker
+wheel spin
+pickerwheel
+spin wheel
+wheel decide
+wheel of names
+spin the wheel
+random name picker
+wheel spinner
+random wheel
+randomizer wheel
+spinner wheel
+spinning wheel
+random picker
+
+
+in the yes/no wheel option, hide the continue button.
+add also color picker button with 7 colors and number picker button with 10 numbers. 
+Whenver mouseover the wheel option buttons, due to white colour, button becomes invisible, fix it.
+
+the wheel button should be 1 line unless it is shown in a narrow screen like mobiles.
+
+the left side of the yes/no wheel button and right end of the number picker button is trimmed. make sure the wheel buttons all visible correctly. Scale the buttons if necessary as a last resort.
+
+when you hover the cursor over the wheel buttons, make sure they are visible correctly, since the button under the cursor becomes invisible/transparent when the cursor moves over it.
+
+in the yes/no wheel option, the spin again button should be centered. Set the font size double of the current size. If an entry has a long name, it should be scaled down.
+
+the volume slider should set the volume between no sound and full sound.
+buttons in the winner popup are stacked, there should be a margin between them.

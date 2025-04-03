@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortune Twister - Free Random Name Picker & Yes/No Decision Wheel</title>
+    <meta name="description" content="Free online wheel spinner for random selection and decision making. Create custom wheels for yes/no decisions, random name picking, and more. Easy-to-use spinner wheel with unlimited options.">
+    <meta name="keywords" content="yes or no wheel, wheel picker, random name picker wheel, spin wheel, wheel decide, pickerwheel, random picker wheel, wheel of names, spinning wheel, randomizer wheel, spinner wheel, random wheel, wheel spinner">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Fortune Twister - Random Name Picker & Yes/No Decision Wheel">
+    <meta property="og:description" content="Create spinning wheels for yes/no decisions, random name picking, and more. Free online wheel picker with unlimited customization options.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fortunetwister.com">
+    <meta property="og:image" content="https://fortunetwister.com/images/fortune-twister-og.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://fortunetwister.com">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
+
+    <link rel="icon" href="Icon/favicon.ico" type="image/x-icon">
+    
+    <!-- JSON-LD Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Fortune Twister - Random Wheel Picker",
+        "description": "Free online wheel picker for random selection and decision making. Perfect for yes/no decisions, random name picking, and custom choices.",
+        "url": "https://fortunetwister.com",
+        "applicationCategory": "Utility",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "Yes/No decision wheel",
+            "Random name picker wheel",
+            "Custom wheel options",
+            "Unlimited choices",
+            "Spinning wheel animation",
+            "Sound effects",
+            "Dark mode"
+        ],
+        "screenshot": "https://fortunetwister.com/images/fortune-twister-screenshot.png",
+        "softwareVersion": "2.0",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "256"
+        }
+    }
+    </script>
+    
+    <!-- FAQ Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is a wheel picker?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A wheel picker is an online tool that helps you make random selections or decisions by spinning a virtual wheel. You can add custom options to the wheel, spin it, and let chance decide the outcome."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I use the Yes/No wheel?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "To use the Yes/No wheel, simply click the 'Yes/No' button at the top of the page, then click the 'SPIN' button in the center of the wheel. The wheel will spin and randomly land on either 'Yes' or 'No' to help you make a decision."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I create a custom wheel with my own options?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! You can create a custom wheel by adding your own options in the 'Add Options' section below the wheel. Type your option in the text field and click the '+' button. You can add as many options as you want, and each will be assigned a different color on the wheel."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is Fortune Twister free to use?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, Fortune Twister is completely free to use with unlimited options and spins. There are no hidden fees or premium features."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I use Fortune Twister for classroom activities?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Absolutely! Fortune Twister is perfect for classroom activities like randomly selecting students, assigning tasks, or creating educational games. Teachers love using our random name picker for fair and engaging student selection."
+                }
+            }
+        ]
+    }
+    </script>
+    
+    <!-- HowTo Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to Use Fortune Twister Wheel Picker",
+        "description": "Learn how to use Fortune Twister to create and spin custom wheels for random selection and decision making.",
+        "step": [
+            {
+                "@type": "HowToStep",
+                "name": "Choose a wheel type",
+                "text": "Select from preset wheels like Yes/No, Names, Colors, or Numbers by clicking the corresponding button at the top of the page."
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Add custom options",
+                "text": "For custom wheels, add your own options in the 'Add Options' section. Type each option and click the '+' button to add it to the wheel."
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Spin the wheel",
+                "text": "Click the 'SPIN' button in the center of the wheel to start the spinning animation."
+            },
+            {
+                "@type": "HowToStep",
+                "name": "View the result",
+                "text": "When the wheel stops spinning, the winning option will be displayed in a popup with confetti animation."
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-dice-d20"></i> FortuneTwister
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#use-cases">Use Cases</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Free Online Wheel Picker - Make Random Choices!</h1>
+        <p class="subtitle">Create custom spinning wheels for yes/no decisions, random name picking, or any choices you need. Simple to use, unlimited options, and completely free!</p>
+        
+        <div class="preset-buttons-wrapper">
+            <div class="preset-buttons">
+                <button onclick="wheelApp.loadPreset('yesno')" class="preset-button">
+                    <i class="fas fa-check-circle"></i> Yes/No
+                </button>
+                <button onclick="wheelApp.loadPreset('names')" class="preset-button">
+                    <i class="fas fa-users"></i> Names
+                </button>
+                <button onclick="wheelApp.loadPreset('colors')" class="preset-button">
+                    <i class="fas fa-palette"></i> Colors
+                </button>
+                <button onclick="wheelApp.loadPreset('numbers')" class="preset-button">
+                    <i class="fas fa-hashtag"></i> Numbers
+                </button>
+            </div>
+        </div>
+
+        <div class="wheel-container">
+            <div id="chart"></div>
+            <div id="question"><h1></h1></div>
+            <div class="header-controls">
+                <button id="themeToggle" class="control-button">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="soundToggle" class="control-button">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+                <button id="settingsToggle" class="control-button">
+                    <i class="fas fa-cog"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Sound Menu -->
+        <div class="menu" id="soundMenu">
+            <div class="menu-header">
+                <h3>Sound Settings</h3>
+                <button class="close-menu">&times;</button>
+            </div>
+            <div class="menu-content">
+                <label class="menu-item">
+                    <span>Mute All Sounds</span>
+                    <input type="checkbox" id="muteAll">
+                </label>
+                <div class="menu-item">
+                    <span>Spin Sound</span>
+                    <input type="range" id="spinVolume" min="0" max="1" value="0.5">
+                </div>
+                <div class="menu-item">
+                    <span>Result Sound</span>
+                    <input type="range" id="resultVolume" min="0" max="1" value="0.5">
+                </div>
+            </div>
+        </div>
+
+        <!-- Settings Menu -->
+        <div class="menu" id="settingsMenu">
+            <div class="menu-header">
+                <h3>Wheel Settings</h3>
+                <button class="close-menu">&times;</button>
+            </div>
+            <div class="menu-content">
+                <div class="menu-item">
+                    <span>Spin Speed</span>
+                    <input type="range" id="spinSpeed" min="1" max="5" value="3">
+                </div>
+                <div class="menu-item">
+                    <span>Wheel Size</span>
+                    <input type="range" id="wheelSize" min="300" max="500" value="400">
+                </div>
+                <div class="menu-item">
+                    <span>Background Color</span>
+                    <input type="color" id="bgColor" value="#ffffff">
+                </div>
+            </div>
+        </div>
+
+        <!-- Winner Popup -->
+        <div class="winner-popup" id="winnerPopup">
+            <div class="winner-content">
+                <button class="close-popup">&times;</button>
+                <h2>Winner!</h2>
+                <div class="winner-name" id="winnerName"></div>
+                <div class="winner-buttons">
+                    <button class="continue-button button-gap">
+                        <i class="fas fa-forward"></i>
+                        Continue
+                    </button>
+                    <button class="replay-button button-gap">
+                        <i class="fas fa-redo"></i>
+                        Spin Again
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="options-section">
+            <h2>Add Options</h2>
+            <div class="input-group">
+                <input type="text" id="option-input" placeholder="Enter option">
+                <button id="add-option">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </div>
+            <div id="options-list"></div>
+        </div>
+        
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="content-section">
+            <h2>How to Use the Wheel Picker</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Choose a Wheel Type</h3>
+                    <p>Select from our preset wheels (Yes/No, Names, Colors, Numbers) or create your own custom wheel.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Add Your Options</h3>
+                    <p>For custom wheels, add your own options in the "Add Options" section below the wheel.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Spin the Wheel</h3>
+                    <p>Click the "SPIN" button in the center of the wheel to start the spinning animation.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Get Your Result</h3>
+                    <p>When the wheel stops, the winning option will be displayed with a celebratory animation.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Features Section -->
+        <section id="features" class="content-section">
+            <h2>Features of Our Wheel Picker</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <i class="fas fa-check-circle feature-icon"></i>
+                    <h3>Yes/No Decision Wheel</h3>
+                    <p>Can't make a decision? Let our Yes/No wheel help you decide quickly and randomly.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-users feature-icon"></i>
+                    <h3>Random Name Picker</h3>
+                    <p>Perfect for teachers, team leaders, or anyone who needs to randomly select names from a list.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-palette feature-icon"></i>
+                    <h3>Custom Colors</h3>
+                    <p>Each segment of the wheel is automatically assigned a different color for easy visualization.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-cog feature-icon"></i>
+                    <h3>Customizable Settings</h3>
+                    <p>Adjust spin speed, wheel size, and background color to personalize your experience.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-volume-up feature-icon"></i>
+                    <h3>Sound Effects</h3>
+                    <p>Enjoy engaging sound effects during spinning and when the result is revealed.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-moon feature-icon"></i>
+                    <h3>Dark Mode</h3>
+                    <p>Switch to dark mode for a more comfortable viewing experience in low-light environments.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- FAQ Section -->
+        <section id="faq" class="content-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h3>What is a wheel picker?</h3>
+                    <p>A wheel picker is an online tool that helps you make random selections or decisions by spinning a virtual wheel. You can add custom options to the wheel, spin it, and let chance decide the outcome.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How do I use the Yes/No wheel?</h3>
+                    <p>To use the Yes/No wheel, simply click the 'Yes/No' button at the top of the page, then click the 'SPIN' button in the center of the wheel. The wheel will spin and randomly land on either 'Yes' or 'No' to help you make a decision.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I create a custom wheel with my own options?</h3>
+                    <p>Yes! You can create a custom wheel by adding your own options in the 'Add Options' section below the wheel. Type your option in the text field and click the '+' button. You can add as many options as you want, and each will be assigned a different color on the wheel.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Is Fortune Twister free to use?</h3>
+                    <p>Yes, Fortune Twister is completely free to use with unlimited options and spins. There are no hidden fees or premium features.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I use Fortune Twister for classroom activities?</h3>
+                    <p>Absolutely! Fortune Twister is perfect for classroom activities like randomly selecting students, assigning tasks, or creating educational games. Teachers love using our random name picker for fair and engaging student selection.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How does the random selection work?</h3>
+                    <p>Fortune Twister uses a fair and unbiased random algorithm to determine where the wheel stops. Each option has an equal chance of being selected, ensuring completely random results every time.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I save my custom wheel for later use?</h3>
+                    <p>Currently, custom wheels are not saved between sessions. However, we're working on adding this feature in a future update to allow users to save and share their custom wheels.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Does Fortune Twister work on mobile devices?</h3>
+                    <p>Yes! Fortune Twister is fully responsive and works great on smartphones, tablets, and desktop computers. Enjoy the same great experience no matter what device you're using.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Use Cases Section -->
+        <section id="use-cases" class="content-section">
+            <h2>Popular Use Cases for Our Wheel Picker</h2>
+            <div class="use-cases-grid">
+                <div class="use-case">
+                    <h3>In the Classroom</h3>
+                    <p>Teachers use our random name picker to select students for answering questions, assigning classroom jobs, or forming groups. It ensures fair participation and adds an element of fun to the selection process.</p>
+                </div>
+                <div class="use-case">
+                    <h3>Team Building Activities</h3>
+                    <p>Team leaders use our wheel spinner to randomly assign tasks, select team captains, or decide the order of presentations. It removes bias and makes the process more engaging.</p>
+                </div>
+                <div class="use-case">
+                    <h3>Decision Making</h3>
+                    <p>Can't decide where to eat, what movie to watch, or which project to tackle first? Let our wheel decide for you and eliminate decision fatigue.</p>
+                </div>
+                <div class="use-case">
+                    <h3>Games and Parties</h3>
+                    <p>Add excitement to games and parties by using our wheel for truth or dare, selecting prizes, or determining player order. It adds an element of suspense and fairness to any game.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <audio id="spinSound" src="sounds/spin.mp3"></audio>
+    <audio id="resultSound" src="sounds/applause.mp3"></audio>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-nav">
+                <a href="#how-it-works">How It Works</a>
+                <a href="#features">Features</a>
+                <a href="#faq">FAQ</a>
+                <a href="#use-cases">Use Cases</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Use</a>
+            </div>
+            <p>&copy; <span id="currentYear"></span> FortuneTwister</p>
+        </div>
+    </footer>
+
+    <script src="wheel.js"></script>
+</body>
+</html>

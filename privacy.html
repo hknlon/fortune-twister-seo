@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Fortune Twister</title>
+    <meta name="description" content="Privacy policy for Fortune Twister, the free online wheel picker for random selection and decision making.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://fortunetwister.com/privacy.html">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="Icon/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-dice-d20"></i> <a href="index.html">FortuneTwister</a>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html#how-it-works">How It Works</a></li>
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
+                <li><a href="index.html#use-cases">Use Cases</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section class="content-section">
+            <h1>Privacy Policy</h1>
+            <p>Last Updated: April 3, 2025</p>
+            
+            <div class="policy-content">
+                <h2>Introduction</h2>
+                <p>Welcome to Fortune Twister. We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you about how we look after your personal data when you visit our website and tell you about your privacy rights and how the law protects you.</p>
+                
+                <h2>Information We Collect</h2>
+                <p>Fortune Twister is designed to be used without requiring any personal information. We do not ask for or collect personally identifiable information such as names, email addresses, or contact details.</p>
+                
+                <h3>Automatically Collected Information</h3>
+                <p>When you visit our website, we may automatically collect certain technical information, including:</p>
+                <ul>
+                    <li>IP address</li>
+                    <li>Browser type and version</li>
+                    <li>Operating system</li>
+                    <li>Referral source</li>
+                    <li>Length of visit, page views, website navigation</li>
+                </ul>
+                <p>This information is collected using cookies and similar technologies for analytics purposes and to improve our service.</p>
+                
+                <h2>How We Use Your Information</h2>
+                <p>We use the automatically collected information solely for the following purposes:</p>
+                <ul>
+                    <li>To improve our website functionality and user experience</li>
+                    <li>To analyze usage patterns and trends</li>
+                    <li>To maintain the security and integrity of our website</li>
+                </ul>
+                
+                <h2>Cookies</h2>
+                <p>Our website uses cookies to distinguish you from other users of our website. This helps us to provide you with a good experience when you browse our website and also allows us to improve our site.</p>
+                <p>You can set your browser to refuse all or some browser cookies, or to alert you when websites set or access cookies. If you disable or refuse cookies, please note that some parts of this website may become inaccessible or not function properly.</p>
+                
+                <h2>Data Security</h2>
+                <p>We have implemented appropriate security measures to prevent your personal data from being accidentally lost, used, or accessed in an unauthorized way, altered, or disclosed. We limit access to your personal data to those employees, agents, contractors, and other third parties who have a business need to know.</p>
+                
+                <h2>Third-Party Services</h2>
+                <p>We may use third-party services such as Google Analytics to help us understand how our site is being used. These services may collect information sent by your browser as part of a web page request, such as cookies or your IP address.</p>
+                
+                <h2>Children's Privacy</h2>
+                <p>Our website is not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact us so that we can take necessary actions.</p>
+                
+                <h2>Changes to This Privacy Policy</h2>
+                <p>We may update our privacy policy from time to time. We will notify you of any changes by posting the new privacy policy on this page and updating the "Last Updated" date at the top of this policy.</p>
+                
+                <h2>Contact Us</h2>
+                <p>If you have any questions about this privacy policy or our privacy practices, please contact us.</p>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-nav">
+                <a href="index.html">Home</a>
+                <a href="index.html#how-it-works">How It Works</a>
+                <a href="index.html#features">Features</a>
+                <a href="index.html#faq">FAQ</a>
+                <a href="index.html#use-cases">Use Cases</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Use</a>
+            </div>
+            <p>&copy; <span id="currentYear"></span> FortuneTwister</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                const html = document.documentElement;
+                if (html.getAttribute('data-theme') === 'light') {
+                    html.setAttribute('data-theme', 'dark');
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    html.setAttribute('data-theme', 'light');
+                    localStorage.setItem('theme', 'light');
+                }
+            });
+        }
+        
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+    </script>
+</body>
+</html>
